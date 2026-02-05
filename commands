@@ -1,0 +1,6 @@
+When verifying the geometry, you dont necessarily runthe program and save into a root file
+In a terminal with root
+TBrowser b;
+
+Start Viewer on CS the .root file in the TBrowser
+Put EDep ( Deposed Energy) into the desired energy
