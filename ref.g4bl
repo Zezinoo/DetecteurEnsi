@@ -37,10 +37,7 @@ particlecolor e-=1,0,0 e+=0,0,1 gamma=1,1,0
 # beam gaussian particle=e- nEvents=10000 beamZ=0.0 sigmaX=1.0 sigmaY=1.0 sigmaXp=0. sigmaYp=0. meanMomentum=sqrt(0.01*(0.01+1.022)) sigmaP=0.0 meanT=0.0 sigmaT=0.0
 	
 # Example for gamma:
-#beam gaussian particle=gamma nEvents=100000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=0.662 sigmaP=0.0 meanT=0.0 sigmaT=0.0
-#Isotropic Source
-
-isotropicsource particle=gamma nEvents=100000 x=0 y=0 z=0 meanP=0.662 sigmaP = 0
+beam gaussian particle=gamma nEvents=100000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=1 sigmaP=0.0 meanT=0.0 sigmaT=0.0
 
 
 #################################################################
