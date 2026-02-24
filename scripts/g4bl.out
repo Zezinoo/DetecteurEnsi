@@ -22,7 +22,7 @@ G4LEVELGAMMADATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/Photo
 G4RADIOACTIVEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RadioactiveDecay5.3
 G4REALSURFACEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RealSurface2.1.1
 G4SAIDXSDATA=/home/alves-mesquita/Geant4Data/G4SAIDDATA2.0
-G4beamline Process ID 53505
+G4beamline Process ID 59350
 
 *************************************************************
  g4beamline version: 3.08                        (Aug 11 2022)
@@ -76,7 +76,7 @@ material CsI    Mixture: 0.51*Cs+0.49*I
 material NaI    Mixture: 0.15*Na+0.85*I
                 density=3.670 temperature=273 pressure=1.0
 material Al     Z=13.00 A=26.98
-                density=27.000 temperature=273 pressure=1.0
+                density=2.700 temperature=273 pressure=1.0
 detector     NaI-scint     radius=30 innerRadius=0 height=60 width=60
                            length=60 maxStep=100 material=NaI birks=0
                            color=0,1,0,0.2 solid= noSingles=0 format=
@@ -99,15 +99,13 @@ detector     al-apres      radius=32 innerRadius=0 height=64 width=64 length=2
                            coordinates=Local coord=Local kill=0 perTrack=0
 place   NaI-scint copies=1 x=-1.0 y=-1.0 z=60.0 
 place   Al-prot copies=1 x=-1.0 y=-1.0 z=60.0 
-place   al-avant copies=1 x=-1.0 y=-1.0 z=91.0 
-place   al-apres copies=1 x=-1.0 y=-1.0 z=29.0 
 label                      text=NaI-scint color=1,1,1 size=12
                            coordinates=global file= line=0
 
-World size (before incrementing by 201.357 mm): 66.0 H  66.0 W  184.0 L
+World size (before incrementing by 201.357 mm): 66.0 H  66.0 W  180.0 L
 
 PARAMETERS:
-            Zcl=30
+            Zcl=90
      deltaChord=3.0
 deltaIntersection=0.1
    deltaOneStep=0.01
@@ -129,10 +127,6 @@ Checking overlaps for volume NaI-scint:0 (G4Tubs) ... OK!
 BLCMDdetector::Construct NaI-scint parent= relZ=60.0 globZ=60.0
 Checking overlaps for volume Al-prot:0 (G4Tubs) ... OK! 
 BLCMDdetector::Construct Al-prot parent= relZ=60.0 globZ=60.0
-Checking overlaps for volume al-avant:0 (G4Tubs) ... OK! 
-BLCMDdetector::Construct al-avant parent= relZ=91.0 globZ=91.0
-Checking overlaps for volume al-apres:0 (G4Tubs) ... OK! 
-BLCMDdetector::Construct al-apres parent= relZ=29.0 globZ=29.0
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
 
 Geometry test nPoints=100 tolerance=0.002 mm:
