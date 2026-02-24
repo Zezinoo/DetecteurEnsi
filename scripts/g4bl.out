@@ -22,7 +22,7 @@ G4LEVELGAMMADATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/Photo
 G4RADIOACTIVEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RadioactiveDecay5.3
 G4REALSURFACEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RealSurface2.1.1
 G4SAIDXSDATA=/home/alves-mesquita/Geant4Data/G4SAIDDATA2.0
-G4beamline Process ID 59350
+G4beamline Process ID 68676
 
 *************************************************************
  g4beamline version: 3.08                        (Aug 11 2022)
@@ -77,8 +77,10 @@ material NaI    Mixture: 0.15*Na+0.85*I
                 density=3.670 temperature=273 pressure=1.0
 material Al     Z=13.00 A=26.98
                 density=2.700 temperature=273 pressure=1.0
-detector     NaI-scint     radius=30 innerRadius=0 height=60 width=60
-                           length=60 maxStep=100 material=NaI birks=0
+material Na     Z=11.00 A=23.00
+                density=0.969 temperature=273 pressure=1.0
+detector     Na-scint      radius=30 innerRadius=0 height=60 width=60
+                           length=60 maxStep=100 material=Na birks=0
                            color=0,1,0,0.2 solid= noSingles=0 format=
                            filename= file= require= referenceParticle=0
                            coordinates=Local coord=Local kill=0 perTrack=0
@@ -97,7 +99,7 @@ detector     al-apres      radius=32 innerRadius=0 height=64 width=64 length=2
                            color=0.8,0.8,0.8,0.2 solid= noSingles=0 format=
                            filename= file= require= referenceParticle=0
                            coordinates=Local coord=Local kill=0 perTrack=0
-place   NaI-scint copies=1 x=-1.0 y=-1.0 z=60.0 
+place   Na-scint copies=1 x=-1.0 y=-1.0 z=60.0 
 place   Al-prot copies=1 x=-1.0 y=-1.0 z=60.0 
 label                      text=NaI-scint color=1,1,1 size=12
                            coordinates=global file= line=0
@@ -123,8 +125,8 @@ steppingVerbose=0
  wallClockLimit=-1
   worldMaterial=Vacuum
      zTolerance=2.0
-Checking overlaps for volume NaI-scint:0 (G4Tubs) ... OK! 
-BLCMDdetector::Construct NaI-scint parent= relZ=60.0 globZ=60.0
+Checking overlaps for volume Na-scint:0 (G4Tubs) ... OK! 
+BLCMDdetector::Construct Na-scint parent= relZ=60.0 globZ=60.0
 Checking overlaps for volume Al-prot:0 (G4Tubs) ... OK! 
 BLCMDdetector::Construct Al-prot parent= relZ=60.0 globZ=60.0
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0

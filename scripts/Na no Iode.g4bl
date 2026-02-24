@@ -37,7 +37,7 @@ particlecolor e-=1,0,0 e+=0,0,1 gamma=1,1,0
 # beam gaussian particle=e- nEvents=10000 beamZ=0.0 sigmaX=1.0 sigmaY=1.0 sigmaXp=0. sigmaYp=0. meanMomentum=sqrt(0.01*(0.01+1.022)) sigmaP=0.0 meanT=0.0 sigmaT=0.0
 	
 # Example for gamma:
-beam gaussian particle=gamma nEvents=10000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=1 sigmaP=0.0 meanT=0.0 sigmaT=0.0
+beam gaussian particle=gamma nEvents=10000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=0.662 sigmaP=0.0 meanT=0.0 sigmaT=0.0
 
 
 #################################################################
@@ -50,6 +50,7 @@ material CsI Cs,0.5115 I,0.4885 density=4.51
 #(Na = 22,99) (I=126.9) From the atomic mass , you can define the fractional masses as f = A(Na)/A(Total)
 material NaI Na,0.1534 I,0.8466 density=3.67
 material Al Z=13 A=26.98 density=2.7
+material Na Z=11 A=23 density=0.9688
 
 ################################################################
 #                      Detector
@@ -60,7 +61,7 @@ material Al Z=13 A=26.98 density=2.7
 #place CsI-cube   x=-1   y=-1   z=60
 
 #define a NaI cylinder
-detector NaI-scint radius=30.0 length=60.0 color=0,1,0,0.2 material=NaI
+detector Na-scint radius=30.0 length=60.0 color=0,1,0,0.2 material=Na
 
 #tubs should work fine as well
 #tubs Win1 outerRadius=30.0 length=60.0 material=NaI color=0,1,0,0.2 
@@ -76,7 +77,7 @@ detector al-avant radius=32.0 length=2.0 color=0.8,0.8,0.8,0.2 material=Al
 detector al-apres radius=32.0 length=2.0 color=0.8,0.8,0.8,0.2 material=Al
 
 
-place NaI-scint   x=-1   y=-1   z=60
+place Na-scint x=-1   y=-1   z=60
 place Al-prot     x=-1   y=-1   z=60
 #place al-avant    x=-1   y=-1   z=91
 #place al-apres    x=-1   y=-1   z=29
