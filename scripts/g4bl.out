@@ -22,7 +22,7 @@ G4LEVELGAMMADATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/Photo
 G4RADIOACTIVEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RadioactiveDecay5.3
 G4REALSURFACEDATA=/opt/cern/geant/geant4.10.05.p01/share/Geant4-10.5.1/data/RealSurface2.1.1
 G4SAIDXSDATA=/home/alves-mesquita/Geant4Data/G4SAIDDATA2.0
-G4beamline Process ID 126455
+G4beamline Process ID 161024
 
 *************************************************************
  g4beamline version: 3.08                        (Aug 11 2022)
@@ -67,7 +67,7 @@ physics      FTFP_BERT_PEN disable= inactivate= deactivate= doStochastics=1
 **************************************************************************
 param        minStep       0.001
 particlecolor              e+=0,0,1 e-=1,0,0 gamma=1,1,0
-beam    GAUSSIAN particle=gamma nEvents=100000 firstEvent=-1 lastEvent=2147483647 beamX=0.0 beamY=0.0 beamZ=-30.0 maxR=1000000.0 
+beam    GAUSSIAN particle=gamma nEvents=100000 firstEvent=-1 lastEvent=2147483647 beamX=0.0 beamY=0.0 beamZ=-200.0 maxR=1000000.0 
 		meanMomentum=0.7 weight=1.000000 
 		sigmaX=0.1 sigmaY=0.1 sigmaZ=0.0 sigmaXp=0.00000 sigmaYp=0.00000 
 		sigmaP=0.0 sigmaT=0.000 meanXp=0.00000 meanYp=0.00000 meanT=0.000 
@@ -105,19 +105,21 @@ place   NaI-scint copies=1 x=-1.0 y=-1.0 z=60.0
 place   Al-prot copies=1 x=-1.0 y=-1.0 z=60.0 
 place   al-avant copies=1 x=-1.0 y=-1.0 z=91.0 
 place   al-apres copies=1 x=-1.0 y=-1.0 z=29.0 
-detector     Plaque        radius=0 innerRadius=0 height=80 width=80 length=20
+detector     Plaque        radius=0 innerRadius=0 height=80 width=80 length=5
                            maxStep=100 material=Pb birks=0
                            color=0.8,0.8,0.8,0.2 solid= noSingles=0 format=
                            filename= file= require= referenceParticle=0
                            coordinates=Local coord=Local kill=0 perTrack=0
 place   Plaque  copies=1 x=-1.0 y=-1.0 z=1.0 
+place   Plaque  copies=1 x=-1.0 y=-1.0 z=-31.0 
+place   Plaque  copies=1 x=-1.0 y=-1.0 z=-61.0 
 label                      text=NaI-scint color=1,1,1 size=12
                            coordinates=global file= line=0
 
-World size (before incrementing by 201.357 mm): 82.0 H  82.0 W  184.0 L
+World size (before incrementing by 201.357 mm): 82.0 H  82.0 W  800.0 L
 
 PARAMETERS:
-            Zcl=11
+            Zcl=-58.5
      deltaChord=3.0
 deltaIntersection=0.1
    deltaOneStep=0.01
@@ -145,6 +147,22 @@ Checking overlaps for volume al-apres:0 (G4Tubs) ... OK!
 BLCMDdetector::Construct al-apres parent= relZ=29.0 globZ=29.0
 Checking overlaps for volume Plaque:0 (G4Box) ... OK! 
 BLCMDdetector::Construct Plaque parent= relZ=1.0 globZ=1.0
+Checking overlaps for volume Plaque:0 (G4Box) ... OK! 
+**************************************************************************
+*** G4Exception: Duplicate NTuple
+***    severity: Warning
+***   issued by: BLNTuple
+*** description: Detector/Plaque
+**************************************************************************
+BLCMDdetector::Construct Plaque parent= relZ=-31.0 globZ=-31.0
+Checking overlaps for volume Plaque:0 (G4Box) ... OK! 
+**************************************************************************
+*** G4Exception: Duplicate NTuple
+***    severity: Warning
+***   issued by: BLNTuple
+*** description: Detector/Plaque
+**************************************************************************
+BLCMDdetector::Construct Plaque parent= relZ=-61.0 globZ=-61.0
 ### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
 
 Geometry test nPoints=100 tolerance=0.002 mm:
@@ -242,13 +260,13 @@ BLVisManager init: /vis/viewer/set/hiddenMarker true
 WARNING: No extent set for user vis action "DrawMarkers".
 WARNING: User Vis Action "DrawMarkers" extent is null.
  Changing export format to "jpg"
-100 events have been kept for refreshing and/or reviewing.
-  "/vis/reviewKeptEvents" to review them one by one.
-  "/vis/enable", then "/vis/viewer/flush" or "/vis/viewer/rebuild" to see them accumulated.
+WARNING: Viewpoint direction is very close to the up vector direction.
+  Change the up vector or "/vis/viewer/set/rotationStyle freeRotation".
 
 Graphics systems deleted.
 Visualization Manager deleting...
 
-Exceptions: 0 Fatal, 0 Events Aborted, 0 Stuck Tracks (stopped), 1 Warnings
+Exceptions: 0 Fatal, 0 Events Aborted, 0 Stuck Tracks (stopped), 3 Warnings
+      2 times: Duplicate NTuple
       1 times: un-named arguments ignored
 g4beamline: simulation complete
