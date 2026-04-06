@@ -1,0 +1,25 @@
+
+# gaussian gamma beam
+beam gaussian particle=gamma nEvents=100000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=3 sigmaP=0.0 meanT=0.0 sigmaT=0.0
+
+#gaussian particle beam
+# meanMomentum is pc , and by relativty pc = sqrt{T(T + 2mec^2)}
+beam gaussian particle=e- nEvents=100000 beamZ=0.0 sigmaX=0.1 sigmaY=0.1 sigmaXp=0. sigmaYp=0. meanMomentum=sqrt(20*(20+1.022)) sigmaP=0.0 meanT=0.0 sigmaT=0.0
+
+
+#isotropicsource
+isotropicsource particle=gamma meanP=1
+
+#empty cylinder
+detector Al-prot innerRadius=30.0 radius=32.0 length=60.0 color=0.8,0.8,0.8,0.2 material=Al
+
+#rotation
+place detecteurSi  z=-2   y=-4   x=0 rotation=X-90
+
+
+# meanMomentum is pc , and by relativity pc = sqrt{T(T + 2mec^2)}
+Electron      : 0.51099895 MeV
+Deuteron      : 1875.6129 MeV
+Triton        : 2808.9211 MeV
+Helium-3      : 2808.3916 MeV
+Alpha (He-4)  : 3727.3794 MeV
