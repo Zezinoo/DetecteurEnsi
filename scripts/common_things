@@ -17,6 +17,13 @@ detector Al-prot innerRadius=30.0 radius=32.0 length=60.0 color=0.8,0.8,0.8,0.2 
 place detecteurSi  z=-2   y=-4   x=0 rotation=X-90
 
 
+#boolean solids
+box al_cube width=70 height=70 length=70 color=1,0,0,0.2 material=Al
+box innerVoid width=60.002 height=60.002 length=60.002 material=Vacuum
+
+boolean protection al_cube innerVoid op=subtraction material=Al color=1,1,0,0.2
+
+
 # meanMomentum is pc , and by relativity pc = sqrt{T(T + 2mec^2)}
 Electron      : 0.51099895 MeV
 Deuteron      : 1875.6129 MeV
